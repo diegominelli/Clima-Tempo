@@ -35,8 +35,6 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
 function showInfo(json) {
   showWarning("");
 
-  document.querySelector(".resultado").style.display = "block";
-
   document.querySelector(".titulo").innerHTML = `${json.name}, ${json.country}`;
   document.querySelector(".tempInfo").innerHTML = `${json.temp} <sup>°C</sup>`;
   document.querySelector(
@@ -51,6 +49,8 @@ function showInfo(json) {
   document.querySelector(".ventoPonto").style.transform = `rotate(${
     json.windAngle - 90
   }deg)`;
+
+  document.querySelector(".resultado").style.display = "block";
 }
 
 function clearInfo() {
